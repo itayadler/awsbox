@@ -78,7 +78,6 @@ function doDeploy() {
       // now let's parse .awsbox.config
       try {
         awsboxJson = JSON.parse(fs.readFileSync(path.join(newCodeDir, '.awsbox.json')));
-        if (!awsboxJson.processes) throw "missing 'processes' property";
       } catch(e) {
         console.log("!! Couldn't read .awsbox.json: " + e.toString());
         process.exit(1);
